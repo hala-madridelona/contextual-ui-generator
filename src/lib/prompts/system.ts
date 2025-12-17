@@ -50,22 +50,21 @@ export const FRONTEND_ARCHITECT_PROMPT = `
     type: Text
     required props:
     - value
-    optional props:
     - variant (heading | subheading | body | caption)
-
+    - size (small | medium | large)
     ---
 
     # Card
     type: Card
-    required props: []
-    optional props:
-    - title
-    - description
-    - sections:
+    required props:
+    - sections: object with following keys
         - headerActions: array of Button
         - content: array of components
         - footerActions: array of Button
-    children allowed: any
+    optional props:
+    - title
+    - description
+    children allowed: none
 
     ---
 
