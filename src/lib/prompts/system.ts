@@ -39,10 +39,12 @@ export const FRONTEND_ARCHITECT_PROMPT = `
     # Input
     type: Input
     required props:
+    - type (text | email | password | number | range )
+    - placeholder
     - name
     optional props:
-    - placeholder
-    - type (text | email | password | number)
+    - min ( works with type = range )
+    - max ( works with type = range )
 
     ---
 
@@ -98,14 +100,16 @@ export const FRONTEND_ARCHITECT_PROMPT = `
     - alt
     - width
     - height
+    example src: https://picsum.photos/200/300
 
     ---
 
     # Table
     type: Table
     required props:
-    - columns
-    - rows
+    - title 
+    - columns ( array of columns names from left to right)
+    - rows ( array of object with each object having a length equal to the number of columns and key:value being columnName:rowValue )
     optional props: []
 
     ---
